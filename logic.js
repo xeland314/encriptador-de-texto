@@ -14,7 +14,6 @@ function esUnTextoValido(texto) {
     return regex.test(texto);
 }
 
-
 function encriptar(texto) {
 
     const llaves = {
@@ -47,6 +46,13 @@ function desencriptar(texto) {
     return desencriptado;
 }
 
+function mostrarAlerta(titulo, info) {
+    const popup = document.getElementById("mi-popup");
+    document.getElementById("popup-titulo").textContent = titulo;
+    document.getElementById("popup-info").textContent = info;
+    popup.style.display = "block";
+}
+
 function mostrarResultado() {
     var resultado = document.getElementById("resultado");
     resultado.style.display = "block";
@@ -64,36 +70,42 @@ function ocultarResultado() {
 
 function encriptarTexto() {
     const texto = document.getElementById("texto").value;
-    if(esUnTextoValido(texto)) {
+    if (esUnTextoValido(texto)) {
         const textoEncriptado = encriptar(texto);
         document.getElementById("resultado").value = textoEncriptado;
         mostrarResultado();
     } else {
-        alert('El texto ingresado no es válido. Por favor ingrese solo letras minúsculas sin acentos ni caracteres especiales.');
+        mostrarAlerta(
+            "Texto Inválido",
+            "Por favor ingrese solo letras minúsculas sin acentos ni caracteres especiales."
+        );
     }
 }
 
 function desencriptarTexto() {
     const texto = document.getElementById("texto").value;
-    if(esUnTextoValido(texto)) {
+    if (esUnTextoValido(texto)) {
         const textoDesencriptado = desencriptar(texto);
         document.getElementById("resultado").value = textoDesencriptado;
         mostrarResultado();
     } else {
-        alert('El texto ingresado no es válido. Por favor ingrese solo letras minúsculas sin acentos ni caracteres especiales.');
+        mostrarAlerta(
+            "Texto Inválido",
+            "Por favor ingrese solo letras minúsculas sin acentos ni caracteres especiales."
+        );
     }
 }
 
 function copiar() {
-    let resultadoTextarea = document.getElementById("resultado");
-    // Selecciona el contenido del textarea
-    resultadoTextarea.select();
-    try {
-        // Copia el contenido seleccionado al portapapeles
+    const textarea = document.getElementById("resultado");
+    const texto = textarea.value.trim();
+
+    if (texto.length > 0) {
+        textarea.select();
         document.execCommand('copy');
-        alert('Texto copiado al portapapeles');
-    } catch (err) {
-        alert('No se pudo copiar el texto');
+        mostrarAlerta("Texto Copiado", "Texto copiado al portapapeles.");
+    } else {
+        mostrarAlerta("Sin Texto", "No hay texto que copiar.");
     }
 }
 
