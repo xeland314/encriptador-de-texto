@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+         <title>Encriptador de texto</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+        <script src="logic.js"></script>
+    </head>
+    <body>
+        <header>
+            <img src="images/Logo.png" alt="Logo de mi sitio web">
+            <h1>Encriptador de texto - Alura Challenge</h1>
+        </header>
+        <main>
+            <div class="textarea-container">
+                <div class="texto-container">
+                    <label for="texto">Texto a encriptar/desencriptar</label>
+                    <textarea id="texto" name="texto" placeholder="Escriba su texto aquí"></textarea>
+                    <br><br>
+                    <div class="botones-container">
+                        <button id="encriptar" onclick="encriptarTexto()">Encriptar</button>
+                        <button id="desencriptar" onclick="desencriptarTexto()">Desencriptar</button>
+                    </div>
+                </div>
+                <div class="resultado-container">
+                    <label for="resultado">Resultado</label>
+                    <div class="default-text" id="default-text">
+                        <img src="images/Muñeco.png" alt="Imagen predeterminada">
+                        <p>Ningún texto fue encontrado.</p>
+                        <p><em>Ingresa el texto que desees encriptar o desencriptar.</em></p>
+                    </div>
+                    <textarea class="resultado" id="resultado" name="resultado" readonly></textarea>
+                    <br><br>
+                    <div class="botones-container">
+                        <button id="copiar" onclick="copiar()">Copiar</button>
+                        <button id="limpiar" onclick="limpiar()">Limpiar</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <h2>xeland314</h2>
+        </footer>
+    </body>
+</html>
+

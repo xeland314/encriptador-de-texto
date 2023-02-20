@@ -1,0 +1,140 @@
+/* Paleta de colores */
+:root {
+  --color-primario: #609ED4;
+  --color-secundario: #356EA9;
+  --color-fondo: #F3F5FC;
+  --color-texto: #072B61;
+  --color-borde: #052051;
+}
+
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+}
+
+/* Encabezado */
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-primario);
+  padding: 20px;
+}
+
+h1 {
+  font-size: 36px;
+  text-align: center;
+  color: var(--color-texto);
+  margin: 0;
+}
+
+img {
+  width: 100px;
+  height: auto;
+}
+
+/* Contenido principal */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+label {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: var(--color-texto);
+}
+
+.botones-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 1em;
+}
+
+button {
+  font-size: 20px;
+  min-width: 180px;
+  padding: 10px 20px;
+  background-color: var(--color-secundario);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--color-borde);
+}
+
+.texto-container, .resultado-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.texto-container label, .resultado-container label {
+  margin-bottom: 10px;
+}
+
+.textarea-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.resultado {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .textarea-container {
+    flex-direction: column;
+  }
+}
+
+textarea, .default-text {
+  width: 400px;
+  height: 250px;
+  padding: 10px;
+  border: 1px solid var(--color-borde);
+  border-radius: 5px;
+  resize: none;
+}
+
+.default-text {
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+}
+
+.default-text img {
+  width: 200px;
+  height: auto;
+}
+
+/* Pie de página */
+footer {
+  background-color: var(--color-primario);
+  padding: 10px;
+  text-align: center;
+  font-family: Audiowide;
+  color: var(--color-texto);
+}
