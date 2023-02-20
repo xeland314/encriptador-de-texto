@@ -28,10 +28,12 @@ header {
   align-items: center;
   background-color: var(--color-primario);
   padding: 20px;
+  border-bottom: 2px dashed var(--color-borde);
 }
 
 h1 {
   font-size: 36px;
+  font-family: Audiowide;
   text-align: center;
   color: var(--color-texto);
   margin: 0;
@@ -68,15 +70,26 @@ button {
   font-size: 20px;
   min-width: 180px;
   padding: 10px 20px;
-  background-color: var(--color-secundario);
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
-button:hover {
+.encriptar, .copiar {
   background-color: var(--color-borde);
+}
+
+.desencriptar, .limpiar {
+  background-color: var(--color-secundario);
+}
+
+.encriptar:active, .copiar:active {
+  background-color: #757FB2;
+}
+
+.desencriptar:active, .limpiar:active {
+  background-color: #AAB2D5;
 }
 
 .texto-container, .resultado-container {
@@ -117,9 +130,13 @@ textarea, .default-text {
 }
 
 @media screen and (max-width: 425px) {
-  textarea {
+  textarea, .default-text {
     width: 300px;
-    height: 475px;
+    height: 450px;
+  }
+
+  button {
+    min-width: 160px;
   }
 }
 
@@ -144,4 +161,7 @@ footer {
   text-align: center;
   font-family: Audiowide;
   color: var(--color-texto);
+  border-top: 2px dashed var(--color-borde);
+  border-bottom: 2px dashed var(--color-borde);
 }
+
