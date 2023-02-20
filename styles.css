@@ -114,12 +114,6 @@ button {
   display: none;
 }
 
-@media screen and (max-width: 768px) {
-  .textarea-container {
-    flex-direction: column;
-  }
-}
-
 textarea, .default-text {
   width: 400px;
   height: 250px;
@@ -129,15 +123,8 @@ textarea, .default-text {
   resize: none;
 }
 
-@media screen and (max-width: 425px) {
-  textarea, .default-text {
-    width: 300px;
-    height: 450px;
-  }
-
-  button {
-    min-width: 160px;
-  }
+textarea {
+  font-size: 16px;
 }
 
 .default-text {
@@ -152,6 +139,23 @@ textarea, .default-text {
 .default-text img {
   width: 200px;
   height: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .textarea-container {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  textarea, .default-text {
+    width: 300px;
+    height: 450px;
+  }
+
+  button {
+    min-width: 160px;
+  }
 }
 
 /* Pie de página */
