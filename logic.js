@@ -64,7 +64,7 @@ function ocultarResultado() {
 
 function encriptarTexto() {
     const texto = document.getElementById("texto").value;
-    if (esUnTextoValido(texto)) {
+    if(esUnTextoValido(texto)) {
         const textoEncriptado = encriptar(texto);
         document.getElementById("resultado").value = textoEncriptado;
         mostrarResultado();
@@ -74,8 +74,8 @@ function encriptarTexto() {
 }
 
 function desencriptarTexto() {
-    const texto = document.getElementById("resultado").value;
-    if (esUnTextoValido(texto)) {
+    const texto = document.getElementById("texto").value;
+    if(esUnTextoValido(texto)) {
         const textoDesencriptado = desencriptar(texto);
         document.getElementById("resultado").value = textoDesencriptado;
         mostrarResultado();
