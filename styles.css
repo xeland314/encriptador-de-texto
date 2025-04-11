@@ -1,9 +1,9 @@
 /* Paleta de colores */
 :root {
-  --color-primario: #609ED4;
-  --color-secundario: #356EA9;
-  --color-fondo: #F3F5FC;
-  --color-texto: #072B61;
+  --color-primario: #609ed4;
+  --color-secundario: #356ea9;
+  --color-fondo: #f3f5fc;
+  --color-texto: #072b61;
   --color-borde: #052051;
 }
 
@@ -15,9 +15,14 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
   font-family: Arial, sans-serif;
   background-color: var(--color-fondo);
   color: var(--color-texto);
+  font-size: calc(14px + 0.5vw);
 }
 
 /* Encabezado */
@@ -28,12 +33,10 @@ header {
   align-items: center;
   background-color: var(--color-primario);
   padding: 20px;
-  border-bottom: 2px dashed var(--color-borde);
 }
 
 h1 {
   font-size: 36px;
-  font-family: Audiowide;
   text-align: center;
   color: var(--color-texto);
   margin: 0;
@@ -41,25 +44,28 @@ h1 {
 
 img {
   width: 100px;
+  max-width: 100%;
   height: auto;
 }
 
 /* Contenido principal */
 main {
   display: flex;
+  flex: 1;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 40px 0;
 }
 
 label {
   font-size: 24px;
   margin-bottom: 10px;
   color: var(--color-texto);
+  text-align: center;
 }
 
 .botones-container {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   gap: 20px;
@@ -67,39 +73,46 @@ label {
 }
 
 button {
-  font-size: 20px;
-  min-width: 190px;
-  padding: 10px 20px;
+  width: 100%;
+  font-size: calc(14px + 1vw);
+  min-width: auto;
+  padding: 10px;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.encriptar, .copiar {
+.encriptar,
+.copiar {
   background-color: var(--color-borde);
 }
 
-.desencriptar, .limpiar {
+.desencriptar,
+.limpiar {
   background-color: var(--color-secundario);
 }
 
-.encriptar:active, .copiar:active {
-  background-color: #757FB2;
+.encriptar:active,
+.copiar:active {
+  background-color: #757fb2;
 }
 
-.desencriptar:active, .limpiar:active {
-  background-color: #AAB2D5;
+.desencriptar:active,
+.limpiar:active {
+  background-color: #aab2d5;
 }
 
-.texto-container, .resultado-container {
+.texto-container,
+.resultado-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.texto-container label, .resultado-container label {
+.texto-container label,
+.resultado-container label {
   margin-bottom: 10px;
 }
 
@@ -114,9 +127,10 @@ button {
   display: none;
 }
 
-textarea, .default-text {
+textarea,
+.default-text {
   width: 400px;
-  height: 250px;
+  height: 300px;
   padding: 10px;
   border: 1px solid var(--color-borde);
   border-radius: 5px;
@@ -134,6 +148,8 @@ textarea {
   flex-direction: column;
   justify-content: center;
   background-color: white;
+  text-align: center;
+  height: 100%;
 }
 
 .default-text img {
@@ -141,14 +157,22 @@ textarea {
   height: auto;
 }
 
-@media screen and (max-width: 768px) {
+.default-text p {
+  margin: 0; /* Eliminar márgenes para evitar desplazamientos */
+  line-height: 1.5; /* Ajusta la altura de las líneas para uniformidad */
+}
+
+@media screen and (max-width: 825px) {
   .textarea-container {
     flex-direction: column;
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
 }
 
 @media screen and (max-width: 425px) {
-  textarea, .default-text {
+  textarea,
+  .default-text {
     width: 300px;
     height: 450px;
   }
@@ -156,16 +180,41 @@ textarea {
   button {
     min-width: 160px;
   }
+
+  .logo-alura {
+    display: none;
+  }
+
+  .botones-container {
+    gap: 5px;
+  }
 }
 
+@media screen and (max-width: 350px) {
+  textarea,
+  .default-text {
+    width: 95%;
+    height: 300px;
+  }
+  button {
+    min-width: 45px;
+  }
+  header {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  header h1 {
+    font-size: calc(36px - 2vw);
+  }
+  .textarea-container {
+    width: 95%;
+  }
+}
 /* Pie de página */
 footer {
+  height: auto;
   background-color: var(--color-primario);
   padding: 10px;
   text-align: center;
-  font-family: Audiowide;
   color: var(--color-texto);
-  border-top: 2px dashed var(--color-borde);
-  border-bottom: 2px dashed var(--color-borde);
 }
-
